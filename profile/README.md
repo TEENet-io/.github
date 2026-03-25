@@ -39,6 +39,7 @@ Make critical actions traceable with structured records across the execution flo
 - Treasury and governance workflows
 - Secure signing systems
 - Oracle-style systems
+- Agentic systems with execution boundaries and approval gates
 
 ## Design Principles
 
