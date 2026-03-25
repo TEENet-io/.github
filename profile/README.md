@@ -46,7 +46,3 @@ Make critical actions traceable with structured records across the execution flo
 - Separate trust from application logic
 - Enforce authorization as infrastructure
 - Make sensitive actions reviewable and auditable
-
-## In This Organization
-
-This organization contains the core components, integrations, and tooling behind TEENet.
