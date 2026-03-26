@@ -19,20 +19,11 @@ TEENet provides these as a single trust and execution layer, so developers do no
 
 ## Core Capabilities
 
-### Verifiable Execution
-Run sensitive logic inside TEE-backed environments with hardware-rooted trust.
-
-### TEE-Enforced Key Isolation
-Keep keys inside the execution boundary, where applications and operators do not directly access or extract them.
-
-### Policy-Based Authorization
-Define which application can use which key and what actions it may perform.
-
-### Approval-Aware Execution
-Require approvals before sensitive actions are signed or executed.
-
-### Auditable Automation
-Make critical actions traceable with structured records across the execution flow.
+- **Verifiable Execution** - Run sensitive logic inside TEE-backed environments with hardware-rooted trust.
+- **TEE-Enforced Key Isolation** - Keep keys inside the execution boundary, where applications and operators do not directly access or extract them.
+- **Policy-Based Authorization** - Define which application can use which key and what actions it may perform.
+- **Approval-Aware Execution** - Require approvals before sensitive actions are signed or executed.
+- **Auditable Automation** - Make critical actions traceable with structured records across the execution flow.
 
 ## Use Cases
 
