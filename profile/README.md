@@ -1,40 +1,49 @@
 # TEENet
 
-**TEE-based trust and execution layer for high-stakes applications**
+**Open-source trust stack for protected secrets and verifiable actions**
 
-TEENet enables verifiable execution, policy-based authorization, approval-aware signing, and auditable automation.
+TEENet helps developers build applications that use secrets, such as private keys, API keys, OAuth tokens, and DB passwords, without giving one SaaS platform full control.
+
+At the system layer, TEENet protects how these critical actions happen: which code is allowed to use a secret, where that code runs, how control is split across nodes, what result was produced, and what proof can be checked later.
 
 ## Why TEENet?
 
-TEE hardware gives you isolated compute. Real systems need more than that.
+Many applications need software to use secrets that should not be exposed directly to one service, one operator, or one administrator.
 
-They also need:
+The hard part is not only storing a secret. The hard part is making sure a sensitive operation is performed by the right workload, inside the right trust boundary, under the right owner-controlled authorization, with evidence that can be verified later.
 
-- trusted execution boundaries
-- TEE-enforced key isolation and secure key use
-- platform-enforced policy control over sensitive actions
-- verifiable audit trails
+TEENet is being built for developers who want this trust path to be open, self-owned, and composable.
 
-TEENet provides these as a single trust and execution layer, so developers do not have to build and operate them around TEE themselves.
+## What TEENet Does
 
-## Core Capabilities
+TEENet gives applications a system layer for protected secret use and verifiable critical actions.
 
-- **Verifiable Execution** - Run sensitive logic inside TEE-backed environments with hardware-rooted trust.
-- **TEE-Enforced Key Isolation** - Keep keys inside the execution boundary, where applications and operators do not directly access or extract them.
-- **Policy-Based Authorization** - Define which application can use which key and what actions it may perform.
-- **Approval-Aware Execution** - Require approvals before sensitive actions are signed or executed.
-- **Auditable Automation** - Make critical actions traceable with structured records across the execution flow.
+With TEENet, an application can:
 
-## Use Cases
+- run approved code in a protected execution environment;
+- bind secret use to approved code or a specific application;
+- split secrets into threshold shares and store them across separate TEE-backed nodes;
+- require multiple TEE-backed nodes to participate in signing or credential-backed operations, without exposing the secrets themselves;
+- produce verifiable proof for critical results and protected operations;
+- keep signed records that make sensitive actions traceable later.
 
-- Treasury and governance workflows
-- Secure signing systems
-- Oracle-style systems
-- Agentic systems with execution boundaries and approval gates
+TEENet does not define the application's business rules. It protects the lower-level trust path applications rely on.
+
+## Projects
+
+These projects are separate application or component layers around the TEENet trust stack. They are not the definition of TEENet Core.
+
+| Project | Status | What it demonstrates |
+| --- | --- | --- |
+| [TEENet Wallet](https://github.com/TEENet-io/teenet-wallet) | Open source | An application-layer wallet for agents and automation. The wallet owns its business policy layer, including API access, spending rules, approvals, and user-facing workflows. |
+| Cross-Bridge Message Attester | Coming soon | A component for bridge-domain message attestation. Bridge-specific validation and policy live at the component or application layer. |
+
+## Architecture Overview
 
 ## Design Principles
 
-- Verify first, then trust
-- Separate trust from application logic
-- Enforce authorization as infrastructure
-- Make sensitive actions reviewable and auditable
+- **Separate application policy from system trust.** Apps define business rules; TEENet protects the secret use and execution path.
+- **Self-owned first.** Developers should be able to run, inspect, and adapt the trust stack themselves.
+- **Verify before relying.** Critical actions should produce evidence, not just logs.
+- **Reduce single points of trust.** Threshold design and attestation should narrow what any one operator can control.
+- **Build for real integrations.** TEENet should make hard applications easier to ship, not only provide abstract security primitives.
