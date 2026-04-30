@@ -2,7 +2,7 @@
 
 **Open-source trust stack for protected secrets and verifiable actions**
 
-TEENet helps developers build applications that use secrets, such as private keys, API keys, OAuth tokens, and DB passwords, without giving one SaaS platform full control.
+TEENet is a system that uses Trusted Execution Environment (TEE) hardware to help developers build attested networks of TEE nodes for protected use of secrets, such as private keys, API keys, OAuth tokens, and DB passwords, and for verifiable critical actions.
 
 At the system layer, TEENet protects how these critical actions happen: which code is allowed to use a secret, where that code runs, how control is split across nodes, what result was produced, and what proof can be checked later.
 
@@ -42,13 +42,13 @@ These projects are separate application or component layers around the TEENet tr
 
 ![TEENet high-level architecture](./assets/teenet-architecture.svg)
 
-TEENet separates policy governance, protected application runtime, and distributed secret management.
+TEENet separates policy governance, protected application runtime, and distributed secret management. All nodes shown in the diagram are TEE nodes. Communication between these node groups must go through mutual attestation, and the attestation process includes policy checks.
 
 - **Directory** tells nodes where to connect. It is routing information, not a source of trust.
-- **Trust Policy** defines which TEE nodes can be trusted. Nodes evaluate it locally during mutual attestation.
+- **Trust Policy** defines which TEE nodes can be trusted. Governance, runtime, and secret management nodes evaluate it locally as part of mutual attestation.
 - **Authorization Policy** defines which apps can use which secrets. Secret management nodes enforce it before releasing or using a protected secret.
 
-The governance quorum signs and distributes policy updates, while runtime trust decisions happen between nodes using attestation evidence and locally cached policies.
+The governance quorum signs and distributes policy updates from TEE-backed governance nodes. Runtime trust decisions still happen directly between nodes using attestation evidence and locally cached policies.
 
 ## Design Principles
 

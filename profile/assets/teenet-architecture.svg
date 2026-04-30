@@ -1,6 +1,6 @@
 <svg width="1440" height="1080" viewBox="0 0 1440 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">TEENet high-level architecture</title>
-  <desc id="desc">Trust and policy governance distributes directory, trust policy, and authorization policy to TEE runtime nodes and distributed secret management nodes. Runtime nodes and secret management nodes use mutual attestation and authorized secret access only after policy checks.</desc>
+  <desc id="desc">Trust and policy governance runs on TEE-backed governance nodes and distributes directory, trust policy, and authorization policy to runtime nodes and distributed secret management nodes. All nodes shown are TEE nodes. Communication between node groups requires mutual attestation, and attestation includes policy checks. Secret access is authorized only after policy checks.</desc>
   <defs>
     <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
       <path d="M2 2L10 6L2 10Z" fill="#24272c"/>
@@ -25,24 +25,24 @@
   <rect class="bg" x="0" y="0" width="1440" height="1080" rx="28"/>
 
   <rect class="box" x="65" y="80" width="1310" height="300"/>
-  <text class="title" x="720" y="130" text-anchor="middle">Trust &amp; Policy Governance</text>
+  <text class="node-heading" x="720" y="130" text-anchor="middle">Trust &amp; Policy Governance Nodes</text>
 
-  <text class="heading" x="260" y="215" text-anchor="middle">Directory</text>
-  <text class="body" x="260" y="270" text-anchor="middle">where to connect</text>
+  <text class="node-heading" x="260" y="215" text-anchor="middle">Directory</text>
+  <text class="small" x="260" y="270" text-anchor="middle">where to connect</text>
 
-  <text class="heading" x="650" y="215" text-anchor="middle">Trust Policy</text>
-  <text class="body" x="650" y="270" text-anchor="middle">who can be trusted</text>
+  <text class="node-heading" x="650" y="215" text-anchor="middle">Trust Policy</text>
+  <text class="small" x="650" y="270" text-anchor="middle">who can be trusted</text>
 
-  <text class="heading" x="1110" y="215" text-anchor="middle">Authorization Policy</text>
-  <text class="body" x="1110" y="270" text-anchor="middle">who can use secrets</text>
+  <text class="node-heading" x="1110" y="215" text-anchor="middle">Authorization Policy</text>
+  <text class="small" x="1110" y="270" text-anchor="middle">who can use secrets</text>
 
-  <text class="body" x="720" y="345" text-anchor="middle">signed and distributed by Governance Quorum</text>
+  <text class="small" x="720" y="345" text-anchor="middle">signed and distributed by Governance Quorum</text>
 
-  <line class="line" x1="355" y1="380" x2="355" y2="475" marker-end="url(#arrow)"/>
-  <line class="line" x1="1065" y1="380" x2="1065" y2="475" marker-end="url(#arrow)"/>
+  <line class="line" x1="355" y1="390" x2="355" y2="475" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+  <line class="line" x1="1065" y1="390" x2="1065" y2="475" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
 
   <rect class="box" x="70" y="500" width="570" height="390"/>
-  <text class="node-heading" x="355" y="575" text-anchor="middle">TEE Runtime Nodes</text>
+  <text class="node-heading" x="355" y="575" text-anchor="middle">Runtime Nodes</text>
 
   <rect class="thin-box" x="170" y="625" width="140" height="64"/>
   <text class="app" x="240" y="666" text-anchor="middle">App</text>
@@ -68,6 +68,5 @@
 
   <path class="line" d="M355 900V955H1060V900" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
 
-  <text class="body" x="720" y="1005" text-anchor="middle">Mutual attestation + authorized secret access</text>
-  <text class="body" x="720" y="1050" text-anchor="middle">only after policy checks</text>
+  <text class="body" x="720" y="1030" text-anchor="middle">Authorized secret access only after policy checks</text>
 </svg>
