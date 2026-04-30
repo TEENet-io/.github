@@ -42,6 +42,14 @@ These projects are separate application or component layers around the TEENet tr
 
 ![TEENet high-level architecture](./assets/teenet-architecture.svg)
 
+TEENet separates policy governance, protected application runtime, and distributed secret management.
+
+- **Directory** tells nodes where to connect. It is routing information, not a source of trust.
+- **Trust Policy** defines which TEE nodes can be trusted. Nodes evaluate it locally during mutual attestation.
+- **Authorization Policy** defines which apps can use which secrets. Secret management nodes enforce it before releasing or using a protected secret.
+
+The governance quorum signs and distributes policy updates, while runtime trust decisions happen between nodes using attestation evidence and locally cached policies.
+
 ## Design Principles
 
 - **Separate application policy from system trust.** Apps define business rules; TEENet protects the secret use and execution path.
