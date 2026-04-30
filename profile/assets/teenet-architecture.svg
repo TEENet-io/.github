@@ -1,0 +1,73 @@
+<svg width="1440" height="1000" viewBox="0 0 1440 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">TEENet high-level architecture</title>
+  <desc id="desc">Trust and policy governance distributes directory, trust policy, and authorization policy to TEE runtime nodes and distributed secret management nodes. Runtime nodes and secret management nodes use mutual attestation and authorized secret access only after policy checks.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2L10 6L2 10Z" fill="#24272c"/>
+    </marker>
+    <marker id="arrow-start" markerWidth="12" markerHeight="12" refX="2" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M10 2L2 6L10 10Z" fill="#24272c"/>
+    </marker>
+    <style>
+      .bg { fill: #f3f4f5; }
+      .box { fill: transparent; stroke: #24272c; stroke-width: 3; }
+      .thin-box { fill: transparent; stroke: #24272c; stroke-width: 2.5; }
+      .line { stroke: #24272c; stroke-width: 3; }
+      .title { fill: #24272c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 36px; font-weight: 700; letter-spacing: 0; }
+      .heading { fill: #24272c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 34px; font-weight: 700; letter-spacing: 0; }
+      .node-heading { fill: #24272c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 28px; font-weight: 700; letter-spacing: 0; }
+      .body { fill: #24272c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 32px; font-weight: 500; letter-spacing: 0; }
+      .small { fill: #24272c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 26px; font-weight: 500; letter-spacing: 0; }
+      .app { fill: #24272c; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 28px; font-weight: 700; letter-spacing: 0; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1440" height="1000" rx="28"/>
+
+  <rect class="box" x="65" y="80" width="1310" height="300"/>
+  <text class="title" x="720" y="130" text-anchor="middle">Trust &amp; Policy Governance</text>
+
+  <text class="heading" x="260" y="215" text-anchor="middle">Directory</text>
+  <text class="body" x="260" y="270" text-anchor="middle">where to connect</text>
+
+  <text class="heading" x="650" y="215" text-anchor="middle">Trust Policy</text>
+  <text class="body" x="650" y="270" text-anchor="middle">who can be trusted</text>
+
+  <text class="heading" x="1110" y="215" text-anchor="middle">Authorization Policy</text>
+  <text class="body" x="1110" y="270" text-anchor="middle">who can use secrets</text>
+
+  <text class="body" x="720" y="345" text-anchor="middle">signed and distributed by Governance Quorum</text>
+
+  <line class="line" x1="355" y1="380" x2="355" y2="475" marker-end="url(#arrow)"/>
+  <line class="line" x1="1065" y1="380" x2="1065" y2="475" marker-end="url(#arrow)"/>
+
+  <rect class="box" x="70" y="500" width="570" height="390"/>
+  <text class="node-heading" x="355" y="575" text-anchor="middle">TEE Runtime Nodes</text>
+
+  <rect class="thin-box" x="170" y="625" width="140" height="64"/>
+  <text class="app" x="240" y="666" text-anchor="middle">App</text>
+
+  <rect class="thin-box" x="400" y="625" width="170" height="64"/>
+  <text class="app" x="485" y="666" text-anchor="middle">Service</text>
+
+  <rect class="thin-box" x="170" y="735" width="140" height="64"/>
+  <text class="app" x="240" y="776" text-anchor="middle">Agent</text>
+
+  <rect class="thin-box" x="400" y="735" width="170" height="64"/>
+  <text class="app" x="485" y="776" text-anchor="middle">Job</text>
+
+  <rect class="box" x="745" y="500" width="630" height="390"/>
+  <text class="node-heading" x="1060" y="575" text-anchor="middle">Distributed Secret Management Nodes</text>
+
+  <text class="small" x="800" y="625">Secrets: private keys / API keys</text>
+  <text class="small" x="800" y="665">OAuth tokens / DB creds</text>
+  <text class="small" x="800" y="720">Custody: encrypted shares</text>
+  <text class="small" x="800" y="760">threshold protection</text>
+  <text class="small" x="800" y="815">Access: policy-gated release/use</text>
+  <text class="small" x="800" y="840">Local policy enforcement</text>
+
+  <line class="line" x1="660" y1="655" x2="725" y2="655" marker-start="url(#arrow-start)" marker-end="url(#arrow)"/>
+
+  <text class="body" x="720" y="940" text-anchor="middle">Mutual attestation + authorized secret access</text>
+  <text class="body" x="720" y="985" text-anchor="middle">only after policy checks</text>
+</svg>

@@ -40,6 +40,8 @@ These projects are separate application or component layers around the TEENet tr
 
 ## Architecture Overview
 
+![TEENet high-level architecture](./assets/teenet-architecture.svg)
+
 ## Design Principles
 
 - **Separate application policy from system trust.** Apps define business rules; TEENet protects the secret use and execution path.
