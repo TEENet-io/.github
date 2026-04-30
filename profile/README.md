@@ -2,11 +2,19 @@
 
 **Open-source trust stack for protected secrets and verifiable actions**
 
-TEENet is a system that uses Trusted Execution Environment (TEE) hardware to help developers build attested networks of TEE nodes for protected use of secrets, such as private keys, API keys, OAuth tokens, and DB passwords, and for verifiable critical actions.
+TEENet uses Trusted Execution Environment (TEE) hardware to build an attested node network for protected secret use and verifiable critical actions.
 
-At the system layer, TEENet protects how these critical actions happen: which code is allowed to use a secret, where that code runs, how control is split across nodes, what result was produced, and what proof can be checked later.
+At the system layer, TEENet protects how sensitive operations happen: which code is allowed to use a secret, where that code runs, how control is split across nodes, what result was produced, and what proof can be checked later.
 
-## Why TEENet?
+## Start Here
+
+| Repository | Status | Purpose |
+| --- | --- | --- |
+| [TEENet](https://github.com/TEENet-io/teenet) | Coming soon | Canonical entry point for architecture, trust model, roadmap, examples, and contribution guidance. |
+| [TEENet SDK](https://github.com/TEENet-io/teenet-sdk) | Developer preview | Go and TypeScript SDKs for signing, verification, API secrets, Passkey approval, and local mock development. |
+| [TEENet Wallet](https://github.com/TEENet-io/teenet-wallet) | Alpha | An application-layer wallet for agents and automation, built on TEENet-protected signing and policy enforcement. |
+
+## Why TEENet
 
 Many applications need software to use secrets that should not be exposed directly to one service, one operator, or one administrator.
 
@@ -21,22 +29,12 @@ TEENet gives applications a system layer for protected secret use and verifiable
 With TEENet, an application can:
 
 - run approved code in a protected execution environment;
-- bind secret use to approved code or a specific application;
-- split secrets into threshold shares and store them across separate TEE-backed nodes;
+- bind secret use to approved code and a specific application;
+- split secrets into threshold shares across separate TEE-backed nodes;
 - require multiple TEE-backed nodes to participate in signing or credential-backed operations, without exposing the secrets themselves;
-- produce verifiable proof for critical results and protected operations;
-- keep signed records that make sensitive actions traceable later.
+- produce verifiable logs for operations;
 
 TEENet does not define the application's business rules. It protects the lower-level trust path applications rely on.
-
-## Projects
-
-These projects are separate application or component layers around the TEENet trust stack. They are not the definition of TEENet Core.
-
-| Project | Status | What it demonstrates |
-| --- | --- | --- |
-| [TEENet Wallet](https://github.com/TEENet-io/teenet-wallet) | Open source | An application-layer wallet for agents and automation. The wallet owns its business policy layer, including API access, spending rules, approvals, and user-facing workflows. |
-| Cross-Bridge Message Attester | Coming soon | A component for bridge-domain message attestation. Bridge-specific validation and policy live at the component or application layer. |
 
 ## Architecture Overview
 
